@@ -1,0 +1,588 @@
+test_bne_grid_1 (__main__.TestBinaryGrid) ... FAIL
+test_bne_grid_2 (__main__.TestBinaryGrid) ... FAIL
+test_bne_grid_3 (__main__.TestBinaryGrid) ... FAIL
+test_bne_grid_4 (__main__.TestBinaryGrid) ... FAIL
+test_bne_grid_5 (__main__.TestBinaryGrid) ... FAIL
+test_cage_existence (__main__.TestCageConstraints) ... ERROR
+test_cages_1 (__main__.TestCageConstraints) ... FAIL
+test_cages_2 (__main__.TestCageConstraints) ... FAIL
+test_cages_3 (__main__.TestCageConstraints) ... FAIL
+test_cages_4 (__main__.TestCageConstraints) ... FAIL
+test_cages_5 (__main__.TestCageConstraints) ... FAIL
+test_cages_6 (__main__.TestCageConstraints) ... FAIL
+test_dh_1 (__main__.TestDH) ... FAIL
+test_dh_2 (__main__.TestDH) ... FAIL
+test_dh_3 (__main__.TestDH) ... FAIL
+test_dh_4 (__main__.TestDH) ... FAIL
+test_mrv_1 (__main__.TestMRV) ... FAIL
+test_mrv_2 (__main__.TestMRV) ... FAIL
+test_mrv_3 (__main__.TestMRV) ... FAIL
+test_mrv_4 (__main__.TestMRV) ... FAIL
+test_nary_grid_1 (__main__.TestNaryGrid) ... FAIL
+test_nary_grid_2 (__main__.TestNaryGrid) ... FAIL
+test_nary_grid_3 (__main__.TestNaryGrid) ... FAIL
+test_nary_grid_4 (__main__.TestNaryGrid) ... ERROR
+test_bin_prop_fc_0 (__main__.TestPropFC) ... ERROR
+test_bin_prop_fc_1 (__main__.TestPropFC) ... ERROR
+test_bin_prop_fc_2 (__main__.TestPropFC) ... ERROR
+test_bin_prop_fc_3 (__main__.TestPropFC) ... ERROR
+test_bin_prop_fc_4 (__main__.TestPropFC) ... ERROR
+test_prop_fc_0 (__main__.TestPropFC) ... FAIL
+test_prop_fc_1 (__main__.TestPropFC) ... FAIL
+test_prop_fc_2 (__main__.TestPropFC) ... FAIL
+test_prop_fc_3 (__main__.TestPropFC) ... FAIL
+test_prop_fc_4 (__main__.TestPropFC) ... FAIL
+test_prop_GAC_0 (__main__.TestPropGAC) ... ERROR
+test_prop_GAC_1 (__main__.TestPropGAC) ... ERROR
+test_prop_GAC_2 (__main__.TestPropGAC) ... ERROR
+test_prop_GAC_3 (__main__.TestPropGAC) ... ERROR
+test_prop_GAC_4 (__main__.TestPropGAC) ... ERROR
+test_prop_GAC_5 (__main__.TestPropGAC) ... ERROR
+test_prop_GAC_6 (__main__.TestPropGAC) ... ERROR
+test_prop_GAC_7 (__main__.TestPropGAC) ... ERROR
+test_prop_GAC_8 (__main__.TestPropGAC) ... ERROR
+test_prop_GAC_9 (__main__.TestPropGAC) ... ERROR
+
+======================================================================
+ERROR: test_cage_existence (__main__.TestCageConstraints)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "c:\Users\shaki\Documents\Uni\CISC 352\Assignment 1\A1\autograder_stu.py", line 613, in test_cage_existence
+    csp, var_array = cagey_csp_model(board)
+TypeError: cannot unpack non-iterable NoneType object
+
+======================================================================
+ERROR: test_nary_grid_4 (__main__.TestNaryGrid)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "c:\Users\shaki\Documents\Uni\CISC 352\Assignment 1\A1\autograder_stu.py", line 307, in test_nary_grid_4
+    csp_nary = nary_ad_grid(b)[0]
+TypeError: 'NoneType' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\shaki\Documents\Uni\CISC 352\Assignment 1\A1\autograder_stu.py", line 310, in test_nary_grid_4
+    message += "Failed to construct board %s. " %b
+TypeError: not all arguments converted during string formatting
+
+======================================================================
+ERROR: test_bin_prop_fc_0 (__main__.TestPropFC)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "c:\Users\shaki\Documents\Uni\CISC 352\Assignment 1\A1\autograder_stu.py", line 1189, in prop_fc_bin_helper
+    solver.bt_search(prop_FC)
+  File "c:\Users\shaki\Documents\Uni\CISC 352\Assignment 1\A1\cspbase.py", line 507, in bt_search
+    status, prunings = propagator(self.csp) #initial propagate no assigned variables.
+TypeError: cannot unpack non-iterable NoneType object
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\shaki\Documents\Uni\CISC 352\Assignment 1\A1\autograder_stu.py", line 1277, in test_bin_prop_fc_0
+    self.prop_fc_bin_helper(0)
+  File "c:\Users\shaki\Documents\Uni\CISC 352\Assignment 1\A1\autograder_stu.py", line 1192, in prop_fc_bin_helper
+    message += "Failed to solve board!\n%s\n" % b
+TypeError: not all arguments converted during string formatting
+
+======================================================================
+ERROR: test_bin_prop_fc_1 (__main__.TestPropFC)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "c:\Users\shaki\Documents\Uni\CISC 352\Assignment 1\A1\autograder_stu.py", line 1189, in prop_fc_bin_helper
+    solver.bt_search(prop_FC)
+  File "c:\Users\shaki\Documents\Uni\CISC 352\Assignment 1\A1\cspbase.py", line 507, in bt_search
+    status, prunings = propagator(self.csp) #initial propagate no assigned variables.
+TypeError: cannot unpack non-iterable NoneType object
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\shaki\Documents\Uni\CISC 352\Assignment 1\A1\autograder_stu.py", line 1280, in test_bin_prop_fc_1
+    self.prop_fc_bin_helper(1)
+  File "c:\Users\shaki\Documents\Uni\CISC 352\Assignment 1\A1\autograder_stu.py", line 1192, in prop_fc_bin_helper
+    message += "Failed to solve board!\n%s\n" % b
+TypeError: not all arguments converted during string formatting
+
+======================================================================
+ERROR: test_bin_prop_fc_2 (__main__.TestPropFC)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "c:\Users\shaki\Documents\Uni\CISC 352\Assignment 1\A1\autograder_stu.py", line 1189, in prop_fc_bin_helper
+    solver.bt_search(prop_FC)
+  File "c:\Users\shaki\Documents\Uni\CISC 352\Assignment 1\A1\cspbase.py", line 507, in bt_search
+    status, prunings = propagator(self.csp) #initial propagate no assigned variables.
+TypeError: cannot unpack non-iterable NoneType object
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\shaki\Documents\Uni\CISC 352\Assignment 1\A1\autograder_stu.py", line 1283, in test_bin_prop_fc_2
+    self.prop_fc_bin_helper(2)
+  File "c:\Users\shaki\Documents\Uni\CISC 352\Assignment 1\A1\autograder_stu.py", line 1192, in prop_fc_bin_helper
+    message += "Failed to solve board!\n%s\n" % b
+TypeError: not all arguments converted during string formatting
+
+======================================================================
+ERROR: test_bin_prop_fc_3 (__main__.TestPropFC)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "c:\Users\shaki\Documents\Uni\CISC 352\Assignment 1\A1\autograder_stu.py", line 1189, in prop_fc_bin_helper
+    solver.bt_search(prop_FC)
+  File "c:\Users\shaki\Documents\Uni\CISC 352\Assignment 1\A1\cspbase.py", line 507, in bt_search
+    status, prunings = propagator(self.csp) #initial propagate no assigned variables.
+TypeError: cannot unpack non-iterable NoneType object
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\shaki\Documents\Uni\CISC 352\Assignment 1\A1\autograder_stu.py", line 1286, in test_bin_prop_fc_3
+    self.prop_fc_bin_helper(3)
+  File "c:\Users\shaki\Documents\Uni\CISC 352\Assignment 1\A1\autograder_stu.py", line 1192, in prop_fc_bin_helper
+    message += "Failed to solve board!\n%s\n" % b
+TypeError: not all arguments converted during string formatting
+
+======================================================================
+ERROR: test_bin_prop_fc_4 (__main__.TestPropFC)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "c:\Users\shaki\Documents\Uni\CISC 352\Assignment 1\A1\autograder_stu.py", line 1189, in prop_fc_bin_helper
+    solver.bt_search(prop_FC)
+  File "c:\Users\shaki\Documents\Uni\CISC 352\Assignment 1\A1\cspbase.py", line 507, in bt_search
+    status, prunings = propagator(self.csp) #initial propagate no assigned variables.
+TypeError: cannot unpack non-iterable NoneType object
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\shaki\Documents\Uni\CISC 352\Assignment 1\A1\autograder_stu.py", line 1289, in test_bin_prop_fc_4
+    self.prop_fc_bin_helper(4)
+  File "c:\Users\shaki\Documents\Uni\CISC 352\Assignment 1\A1\autograder_stu.py", line 1192, in prop_fc_bin_helper
+    message += "Failed to solve board!\n%s\n" % b
+TypeError: not all arguments converted during string formatting
+
+======================================================================
+ERROR: test_prop_GAC_0 (__main__.TestPropGAC)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "c:\Users\shaki\Documents\Uni\CISC 352\Assignment 1\A1\autograder_stu.py", line 1312, in prop_GAC_helper
+    solver.bt_search(prop_GAC)
+  File "c:\Users\shaki\Documents\Uni\CISC 352\Assignment 1\A1\cspbase.py", line 507, in bt_search
+    status, prunings = propagator(self.csp) #initial propagate no assigned variables.
+TypeError: cannot unpack non-iterable NoneType object
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\shaki\Documents\Uni\CISC 352\Assignment 1\A1\autograder_stu.py", line 1343, in test_prop_GAC_0
+    self.prop_GAC_helper(0)
+  File "c:\Users\shaki\Documents\Uni\CISC 352\Assignment 1\A1\autograder_stu.py", line 1315, in prop_GAC_helper
+    message += "Failed to solve board!\n%s\n" %b
+TypeError: not all arguments converted during string formatting
+
+======================================================================
+ERROR: test_prop_GAC_1 (__main__.TestPropGAC)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "c:\Users\shaki\Documents\Uni\CISC 352\Assignment 1\A1\autograder_stu.py", line 1312, in prop_GAC_helper
+    solver.bt_search(prop_GAC)
+  File "c:\Users\shaki\Documents\Uni\CISC 352\Assignment 1\A1\cspbase.py", line 507, in bt_search
+    status, prunings = propagator(self.csp) #initial propagate no assigned variables.
+TypeError: cannot unpack non-iterable NoneType object
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\shaki\Documents\Uni\CISC 352\Assignment 1\A1\autograder_stu.py", line 1346, in test_prop_GAC_1
+    self.prop_GAC_helper(1)
+  File "c:\Users\shaki\Documents\Uni\CISC 352\Assignment 1\A1\autograder_stu.py", line 1315, in prop_GAC_helper
+    message += "Failed to solve board!\n%s\n" %b
+TypeError: not all arguments converted during string formatting
+
+======================================================================
+ERROR: test_prop_GAC_2 (__main__.TestPropGAC)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "c:\Users\shaki\Documents\Uni\CISC 352\Assignment 1\A1\autograder_stu.py", line 1312, in prop_GAC_helper
+    solver.bt_search(prop_GAC)
+  File "c:\Users\shaki\Documents\Uni\CISC 352\Assignment 1\A1\cspbase.py", line 507, in bt_search
+    status, prunings = propagator(self.csp) #initial propagate no assigned variables.
+TypeError: cannot unpack non-iterable NoneType object
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\shaki\Documents\Uni\CISC 352\Assignment 1\A1\autograder_stu.py", line 1349, in test_prop_GAC_2
+    self.prop_GAC_helper(2)
+  File "c:\Users\shaki\Documents\Uni\CISC 352\Assignment 1\A1\autograder_stu.py", line 1315, in prop_GAC_helper
+    message += "Failed to solve board!\n%s\n" %b
+TypeError: not all arguments converted during string formatting
+
+======================================================================
+ERROR: test_prop_GAC_3 (__main__.TestPropGAC)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "c:\Users\shaki\Documents\Uni\CISC 352\Assignment 1\A1\autograder_stu.py", line 1312, in prop_GAC_helper
+    solver.bt_search(prop_GAC)
+  File "c:\Users\shaki\Documents\Uni\CISC 352\Assignment 1\A1\cspbase.py", line 507, in bt_search
+    status, prunings = propagator(self.csp) #initial propagate no assigned variables.
+TypeError: cannot unpack non-iterable NoneType object
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\shaki\Documents\Uni\CISC 352\Assignment 1\A1\autograder_stu.py", line 1352, in test_prop_GAC_3
+    self.prop_GAC_helper(3)
+  File "c:\Users\shaki\Documents\Uni\CISC 352\Assignment 1\A1\autograder_stu.py", line 1315, in prop_GAC_helper
+    message += "Failed to solve board!\n%s\n" %b
+TypeError: not all arguments converted during string formatting
+
+======================================================================
+ERROR: test_prop_GAC_4 (__main__.TestPropGAC)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "c:\Users\shaki\Documents\Uni\CISC 352\Assignment 1\A1\autograder_stu.py", line 1312, in prop_GAC_helper
+    solver.bt_search(prop_GAC)
+  File "c:\Users\shaki\Documents\Uni\CISC 352\Assignment 1\A1\cspbase.py", line 507, in bt_search
+    status, prunings = propagator(self.csp) #initial propagate no assigned variables.
+TypeError: cannot unpack non-iterable NoneType object
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\shaki\Documents\Uni\CISC 352\Assignment 1\A1\autograder_stu.py", line 1355, in test_prop_GAC_4
+    self.prop_GAC_helper(4)
+  File "c:\Users\shaki\Documents\Uni\CISC 352\Assignment 1\A1\autograder_stu.py", line 1315, in prop_GAC_helper
+    message += "Failed to solve board!\n%s\n" %b
+TypeError: not all arguments converted during string formatting
+
+======================================================================
+ERROR: test_prop_GAC_5 (__main__.TestPropGAC)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "c:\Users\shaki\Documents\Uni\CISC 352\Assignment 1\A1\autograder_stu.py", line 1312, in prop_GAC_helper
+    solver.bt_search(prop_GAC)
+  File "c:\Users\shaki\Documents\Uni\CISC 352\Assignment 1\A1\cspbase.py", line 507, in bt_search
+    status, prunings = propagator(self.csp) #initial propagate no assigned variables.
+TypeError: cannot unpack non-iterable NoneType object
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\shaki\Documents\Uni\CISC 352\Assignment 1\A1\autograder_stu.py", line 1358, in test_prop_GAC_5
+    self.prop_GAC_helper(5)
+  File "c:\Users\shaki\Documents\Uni\CISC 352\Assignment 1\A1\autograder_stu.py", line 1315, in prop_GAC_helper
+    message += "Failed to solve board!\n%s\n" %b
+TypeError: not all arguments converted during string formatting
+
+======================================================================
+ERROR: test_prop_GAC_6 (__main__.TestPropGAC)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "c:\Users\shaki\Documents\Uni\CISC 352\Assignment 1\A1\autograder_stu.py", line 1312, in prop_GAC_helper
+    solver.bt_search(prop_GAC)
+  File "c:\Users\shaki\Documents\Uni\CISC 352\Assignment 1\A1\cspbase.py", line 507, in bt_search
+    status, prunings = propagator(self.csp) #initial propagate no assigned variables.
+TypeError: cannot unpack non-iterable NoneType object
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\shaki\Documents\Uni\CISC 352\Assignment 1\A1\autograder_stu.py", line 1361, in test_prop_GAC_6
+    self.prop_GAC_helper(6)
+  File "c:\Users\shaki\Documents\Uni\CISC 352\Assignment 1\A1\autograder_stu.py", line 1315, in prop_GAC_helper
+    message += "Failed to solve board!\n%s\n" %b
+TypeError: not all arguments converted during string formatting
+
+======================================================================
+ERROR: test_prop_GAC_7 (__main__.TestPropGAC)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "c:\Users\shaki\Documents\Uni\CISC 352\Assignment 1\A1\autograder_stu.py", line 1312, in prop_GAC_helper
+    solver.bt_search(prop_GAC)
+  File "c:\Users\shaki\Documents\Uni\CISC 352\Assignment 1\A1\cspbase.py", line 507, in bt_search
+    status, prunings = propagator(self.csp) #initial propagate no assigned variables.
+TypeError: cannot unpack non-iterable NoneType object
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\shaki\Documents\Uni\CISC 352\Assignment 1\A1\autograder_stu.py", line 1364, in test_prop_GAC_7
+    self.prop_GAC_helper(7)
+  File "c:\Users\shaki\Documents\Uni\CISC 352\Assignment 1\A1\autograder_stu.py", line 1315, in prop_GAC_helper
+    message += "Failed to solve board!\n%s\n" %b
+TypeError: not all arguments converted during string formatting
+
+======================================================================
+ERROR: test_prop_GAC_8 (__main__.TestPropGAC)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "c:\Users\shaki\Documents\Uni\CISC 352\Assignment 1\A1\autograder_stu.py", line 1312, in prop_GAC_helper
+    solver.bt_search(prop_GAC)
+  File "c:\Users\shaki\Documents\Uni\CISC 352\Assignment 1\A1\cspbase.py", line 507, in bt_search
+    status, prunings = propagator(self.csp) #initial propagate no assigned variables.
+TypeError: cannot unpack non-iterable NoneType object
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\shaki\Documents\Uni\CISC 352\Assignment 1\A1\autograder_stu.py", line 1367, in test_prop_GAC_8
+    self.prop_GAC_helper(8)
+  File "c:\Users\shaki\Documents\Uni\CISC 352\Assignment 1\A1\autograder_stu.py", line 1315, in prop_GAC_helper
+    message += "Failed to solve board!\n%s\n" %b
+TypeError: not all arguments converted during string formatting
+
+======================================================================
+ERROR: test_prop_GAC_9 (__main__.TestPropGAC)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "c:\Users\shaki\Documents\Uni\CISC 352\Assignment 1\A1\autograder_stu.py", line 1312, in prop_GAC_helper
+    solver.bt_search(prop_GAC)
+  File "c:\Users\shaki\Documents\Uni\CISC 352\Assignment 1\A1\cspbase.py", line 507, in bt_search
+    status, prunings = propagator(self.csp) #initial propagate no assigned variables.
+TypeError: cannot unpack non-iterable NoneType object
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\shaki\Documents\Uni\CISC 352\Assignment 1\A1\autograder_stu.py", line 1370, in test_prop_GAC_9
+    self.prop_GAC_helper(9)
+  File "c:\Users\shaki\Documents\Uni\CISC 352\Assignment 1\A1\autograder_stu.py", line 1315, in prop_GAC_helper
+    message += "Failed to solve board!\n%s\n" %b
+TypeError: not all arguments converted during string formatting
+
+======================================================================
+FAIL: test_bne_grid_1 (__main__.TestBinaryGrid)
+----------------------------------------------------------------------
+AssertionError: False is not true : 
+
+Student code threw exception "'NoneType' object is not subscriptable". Failed to construct board!
+(3, [(2, [(1, 1), (1, 2)], '-'), (2, [(1, 3)], '?'), (2, [(2, 1), (3, 1)], '/'), (3, [(2, 2), (2, 3)], '/'), (1, [(3, 2), (3, 3)], '-')])
+
+
+======================================================================
+FAIL: test_bne_grid_2 (__main__.TestBinaryGrid)
+----------------------------------------------------------------------
+AssertionError: False is not true : 
+
+Student code threw exception "'NoneType' object is not subscriptable". Failed to construct board!
+(3, [(3, [(1, 1), (2, 1)], '+'), (1, [(1, 2)], '?'), (8, [(1, 3), (2, 3), (2, 2)], '+'), (3, [(3, 1)], '?'), (3, [(3, 2), (3, 3)], '+')])
+
+
+======================================================================
+FAIL: test_bne_grid_3 (__main__.TestBinaryGrid)
+----------------------------------------------------------------------
+AssertionError: False is not true : 
+
+Student code threw exception "'NoneType' object is not subscriptable". Failed to construct board!
+(4, [(2, [(1, 1), (1, 2)], '/'), (3, [(1, 3), (1, 4), (2, 3)], '*'), [(8, [(2, 1), (2, 2), (3, 2)], '+')], (4, [(3, 4)], '?'), (3, [(3, 1), (4, 1)], '-'), (4, [3, 3], '?'), (6, [(3, 4), (4, 4)], '*'), (2, [(4, 2), (4, 3)], '/')])
+
+
+======================================================================
+FAIL: test_bne_grid_4 (__main__.TestBinaryGrid)
+----------------------------------------------------------------------
+AssertionError: False is not true : 
+
+Student code threw exception "'NoneType' object is not subscriptable". Failed to construct board!
+(5, [(1, [(1, 1), (2, 1)], '-'), (10, [(1, 2), (1, 3), (2, 3), (4, 3)], '+'), (9, [(1, 4), (1, 5), (2, 4), (2, 5)], '+'), (40, [(2, 2), (3, 1), (3, 2)], '*'), (50, [(3, 4), (4, 3), (4, 4)], '*'), (10, [(3, 5), (4, 5), (5, 5)], '+'), (9, [(4, 1), (4, 2), (5, 1), (5, 2)], '+'), (4, [(5, 3), (5, 4)], '/')])
+
+
+======================================================================
+FAIL: test_bne_grid_5 (__main__.TestBinaryGrid)
+----------------------------------------------------------------------
+AssertionError: False is not true : 
+
+Student code threw exception "'NoneType' object is not subscriptable". Failed to construct board!
+(6, [(11, [(1, 1), (2, 1)], '+'), (3, [(1, 2), (2, 2)], '*'), (20, [(1, 3), (2, 3), (3, 3)], '*'), (2, [(1, 4), (1, 5)], '-'), (6, [(1, 6), (2, 6)], '/'), (6, [(2, 4), (2, 5)], '*'), (5, [(3, 1), (4, 1)], '+'), (40, [(3, 2), (4, 2), (5, 2)], '*'), (10, [(3, 4), (4, 4)], '+'), (10, [(3, 5), (3, 6)], '*'), (3, [(4, 3), (5, 3)], '-'), (8, [(4, 5), (4, 6), (5, 6)], '+'), (1, [(5, 1), (6, 1), (6, 2)], '-'), (11, [(5, 4), (5, 5)], '+'), (1, [(6, 3), (6, 4)], '-'), (2, [(6, 5), (6, 6)], '-')])
+
+
+======================================================================
+FAIL: test_cages_1 (__main__.TestCageConstraints)
+----------------------------------------------------------------------
+AssertionError: False is not true : 
+
+Student code threw exception "cannot unpack non-iterable NoneType object". Failed to construct board!
+(2, [(4, [(1, 1), (1, 2), (2, 1), (2, 2)], '+')])
+
+
+======================================================================
+FAIL: test_cages_2 (__main__.TestCageConstraints)
+----------------------------------------------------------------------
+AssertionError: False is not true : 
+
+Student code threw exception "cannot unpack non-iterable NoneType object". Failed to construct board!
+(2, [(4, [(1, 1), (1, 2), (2, 1), (2, 2)], '-')])
+
+
+======================================================================
+FAIL: test_cages_3 (__main__.TestCageConstraints)
+----------------------------------------------------------------------
+AssertionError: False is not true : 
+
+Student code threw exception "cannot unpack non-iterable NoneType object". Failed to construct board!
+(2, [(4, [(1, 1), (1, 2), (2, 1), (2, 2)], '*')])
+
+
+======================================================================
+FAIL: test_cages_4 (__main__.TestCageConstraints)
+----------------------------------------------------------------------
+AssertionError: False is not true : 
+
+Student code threw exception "cannot unpack non-iterable NoneType object". Failed to construct board!
+(3, [(10, [(1, 1), (1, 2), (1, 3), (2, 1), (2, 2), (2, 3)], '+')])
+
+
+======================================================================
+FAIL: test_cages_5 (__main__.TestCageConstraints)
+----------------------------------------------------------------------
+AssertionError: False is not true : 
+
+Student code threw exception "cannot unpack non-iterable NoneType object". Failed to construct board!
+(3, [(7, [(1, 1), (1, 2), (1, 3), (2, 1), (2, 2), (2, 3)], '-')])
+
+
+======================================================================
+FAIL: test_cages_6 (__main__.TestCageConstraints)
+----------------------------------------------------------------------
+AssertionError: False is not true : 
+
+Student code threw exception "cannot unpack non-iterable NoneType object". Failed to construct board!
+(3, [(10, [(1, 1), (1, 2), (1, 3), (2, 1), (2, 2), (2, 3)], '*')])
+
+
+======================================================================
+FAIL: test_dh_1 (__main__.TestDH)
+----------------------------------------------------------------------
+AssertionError: False is not true : No Variable Returned from Ord DH
+
+======================================================================
+FAIL: test_dh_2 (__main__.TestDH)
+----------------------------------------------------------------------
+AssertionError: False is not true : No Variable Returned from Ord DH
+
+======================================================================
+FAIL: test_dh_3 (__main__.TestDH)
+----------------------------------------------------------------------
+AssertionError: False is not true : No Variable Returned from Ord DH
+
+======================================================================
+FAIL: test_dh_4 (__main__.TestDH)
+----------------------------------------------------------------------
+AssertionError: False is not true : No Variable Returned from Ord DH
+
+======================================================================
+FAIL: test_mrv_1 (__main__.TestMRV)
+----------------------------------------------------------------------
+AssertionError: False is not true : No Variable Returned from Ord MRV
+
+======================================================================
+FAIL: test_mrv_2 (__main__.TestMRV)
+----------------------------------------------------------------------
+AssertionError: False is not true : No Variable Returned from Ord MRV
+
+======================================================================
+FAIL: test_mrv_3 (__main__.TestMRV)
+----------------------------------------------------------------------
+AssertionError: False is not true : No Variable Returned from Ord MRV
+
+======================================================================
+FAIL: test_mrv_4 (__main__.TestMRV)
+----------------------------------------------------------------------
+AssertionError: False is not true : No Variable Returned from Ord MRV
+
+======================================================================
+FAIL: test_nary_grid_1 (__main__.TestNaryGrid)
+----------------------------------------------------------------------
+AssertionError: False is not true : 
+
+Student code threw exception "'NoneType' object is not subscriptable". Failed to construct board!
+(3, [(2, [(1, 1), (1, 2)], '-'), (2, [(1, 3)], '?'), (2, [(2, 1), (3, 1)], '/'), (3, [(2, 2), (2, 3)], '/'), (1, [(3, 2), (3, 3)], '-')])
+
+
+======================================================================
+FAIL: test_nary_grid_2 (__main__.TestNaryGrid)
+----------------------------------------------------------------------
+AssertionError: False is not true : 
+
+Student code threw exception "'NoneType' object is not subscriptable". Failed to construct board!
+(4, [(2, [(1, 1), (1, 2)], '/'), (7, [(1, 3), (2, 3)], '+'), (4, [(1, 4)], '?'), (1, [(2, 1), (2, 2)], '-'), (3, [(2, 2), (3, 2)], '-'), (2, [(2, 4), (3, 4)], '-'), (4, [(3, 3), (4, 3), (4, 4)], '*'), (1, [(4, 1), (4, 2)], '-')])
+
+
+======================================================================
+FAIL: test_nary_grid_3 (__main__.TestNaryGrid)
+----------------------------------------------------------------------
+AssertionError: False is not true : 
+
+Student code threw exception "'NoneType' object is not subscriptable". Failed to construct board!
+(5, [(2, [(1, 1), (2, 1)], '/'), (1, [(1, 2), (2, 2)], '-'), (2, [(1, 3), (2, 3)], '-'), (4, [(1, 4), (1, 5)], '-'), (6, [(2, 4), (2, 5)], '*'), (2, [(3, 1), (3, 2)], '-'), (3, [(3, 3), (4, 3)], '-'), (2, [(3, 4), (4, 4)], '/'), (3, [(3, 5), (4, 5)], '-'), (8, [(4, 1), (4, 2)], '+'), (7, [(5, 1), (5, 2), (5, 3)], '+'), (2, [(5, 4), (5, 5)], '-')])
+
+
+======================================================================
+FAIL: test_prop_fc_0 (__main__.TestPropFC)
+----------------------------------------------------------------------
+AssertionError: False is not true : 
+
+Student code threw exception "cannot unpack non-iterable NoneType object". Failed to solve board!
+(3, [(3, [(1, 1), (2, 1)], '+'), (2, [(1, 2), (2, 2)], '-'), (6, [(1, 3), (2, 3), (3, 3)], '*'), (5, [(3, 1), (3, 2)], '+')])
+
+
+======================================================================
+FAIL: test_prop_fc_1 (__main__.TestPropFC)
+----------------------------------------------------------------------
+AssertionError: False is not true : 
+
+Student code threw exception "cannot unpack non-iterable NoneType object". Failed to solve board!
+(4, [(6, [(1, 1), (2, 1)], '*'), (3, [(1, 2), (1, 3)], '+'), (3, [(1, 4), (2, 4)], '-'), (7, [(2, 2), (2, 3)], '+'), (2, [(3, 1), (3, 2)], '/'), (3, [(3, 3), (4, 3)], '-'), (6, [(3, 4), (4, 4)], '*'), (7, [(4, 1), (4, 2)], '+')])
+
+
+======================================================================
+FAIL: test_prop_fc_2 (__main__.TestPropFC)
+----------------------------------------------------------------------
+AssertionError: False is not true : 
+
+Student code threw exception "cannot unpack non-iterable NoneType object". Failed to solve board!
+(4, [(16, [(1, 1), (1, 2), (2, 2)], '*'), (7, [(1, 3), (1, 4), (2, 3)], '+'), (4, [(2, 4)], '?'), (2, [(2, 1), (3, 1)], '-'), (2, [(3, 3), (3, 4)], '/'), (2, [(4, 3), (4, 4)], '/'), (12, [(3, 2), (4, 1), (4, 2)], '*')])
+
+
+======================================================================
+FAIL: test_prop_fc_3 (__main__.TestPropFC)
+----------------------------------------------------------------------
+AssertionError: False is not true : 
+
+Student code threw exception "cannot unpack non-iterable NoneType object". Failed to solve board!
+(4, [(4, [(1, 1)], '?'), (2, [(1, 2), (1, 3)], '/'), (1, [(1, 4), (2, 4)], '-'), (6, [(2, 1), (2, 2), (3, 2)], '+'), (12, [(2, 3), (3, 3), (3, 4)], '*'), (1, [(3, 1), (4, 1)], '-'), (5, [(4, 2), (4, 3)], '+'), (2, [(4, 4)], '?')])
+
+
+======================================================================
+FAIL: test_prop_fc_4 (__main__.TestPropFC)
+----------------------------------------------------------------------
+AssertionError: False is not true : 
+
+Student code threw exception "cannot unpack non-iterable NoneType object". Failed to solve board!
+(4, [(2, [(1, 1), (1, 2)], '/'), (3, [(1, 3), (1, 4), (2, 3)], '*'), (8, [(2, 1), (2, 2), (3, 1)], '+'), (6, [(2, 4), (3, 4)], '*'), (2, [(3, 2), (3, 3)], '-'), (2, [(4, 1), (4, 2)], '-'), (2, [(4, 3), (4, 4)], '/')])
+
+
+----------------------------------------------------------------------
+Ran 44 tests in 0.135s
+
+FAILED (failures=27, errors=17)
+----------------------------------------------------------------------
+Time spent:
+
+----------------------------------------------------------------------
+Grades:
+
+FC: 0.0/1.0
+GAC: 0.0/1.5
+MRV: 0.0/0.5
+DH: 0.0/0.5
+BINARY: 0.0/0.5
+NARY: 0.0/0.5
+CAGEY: 0.0/1.0
+
+TOTAL: 0.0/5.5
+Code quality: ?/0.5
+
+Running time: 2023_01_27-17:46:11
+
+===========================================
