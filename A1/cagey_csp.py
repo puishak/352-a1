@@ -114,13 +114,13 @@ def binary_ne_grid(cagey_grid):
             # This portion is run on every cell on the grid
             # Set constraint for each element on the same col
             for ii in range(i+1, n):
-                name = "not-eq[cell[{},{}], cell[{},{}]]".format(i+1, j+1, ii+1, j+1)
+                name = "bne[cell[{},{}], cell[{},{}]]".format(i+1, j+1, ii+1, j+1)
                 con = Constraint(name, [cells[i][j], cells[ii][j]])
                 con.add_satisfying_tuples(binary_satisfying_tuples)
                 csp_model.add_constraint(con)
             # Set constraint for each element on the same row
             for jj in range(j+1, n):
-                name = "not-eq[cell[{},{}], cell[{},{}]]".format(i+1, j+1, i+1, jj+1)
+                name = "bne[cell[{},{}], cell[{},{}]]".format(i+1, j+1, i+1, jj+1)
                 con = Constraint(name, [cells[i][j], cells[i][jj]])
                 con.add_satisfying_tuples(binary_satisfying_tuples)
                 csp_model.add_constraint(con)
@@ -136,18 +136,38 @@ def nary_ad_grid(cagey_grid):
     
     name = "nary_ad_{}".format(n)
     cells = create_cell_variables(n)
-    cage_vars = create_cage_variables(cages)
     
     vars = []
     for row in cells:
         vars += row
-    vars += cage_vars
     
     csp_model = CSP(name, vars)
     
     # Add the constraints
+    nary_satisfying_tuples = get_nary_satisfying_tuples(n)
     
-    return csp_model
+    for i in range(n):
+        # The ith column
+        col = []
+        # The ith row
+        row = []
+        for j in range(n):
+            col.append(cells[i][j])
+            row.append(cells[j][i])
+            
+        # Create the column constraint 
+        col_name = "all-dif-col({})".format(i)
+        col_const = Constraint(col_name, col)
+        col_const.add_satisfying_tuples(nary_satisfying_tuples)
+        csp_model.add_constraint(col_const)
+        
+        row_name = "all-dif-row({})".format(i)
+        row_const = Constraint(row_name, row)
+        row_const.add_satisfying_tuples(nary_satisfying_tuples)
+        csp_model.add_constraint(row_const)
+    
+    
+    return (csp_model, vars)
 
 def cagey_csp_model(cagey_grid):
     
@@ -172,7 +192,28 @@ def cagey_csp_model(cagey_grid):
     return csp_model
 
 
-    
+###
+### Helper Functions
+###
+
+# Return a list of nary alldiff touples that satisfies our constraints for the board
+def get_nary_satisfying_tuples(n):
+    if n == 2:
+        return [[1,2], [2,1]]
+    elif n > 2:
+        prev = get_nary_satisfying_tuples(n-1)
+        output = []
+        for tup in prev:
+            # For every tuple in prev we want to create n tuples for the new list with the number n in all different positions
+            for i in range(n-1, -1, -1):
+                # i is the position we want to enter the new number in
+                new_tup = list(tup)
+                new_tup.insert(i, n)
+                output.append(new_tup)
+        
+        return output
+    else:
+        return -1
 
 # Return nXn matrix of cell Variables with the proper domain and name
 def create_cell_variables(n):
@@ -215,7 +256,7 @@ if __name__ == "__main__":
     # print(sample_grid)
     
 
-    model = binary_ne_grid(sample_grid)
+    # model = binary_ne_grid(sample_grid)
     # model = nary_ad_grid(sample_grid)
     # model = cagey_csp_model(sample_grid)
     
@@ -223,8 +264,8 @@ if __name__ == "__main__":
     # for var in model.get_all_vars():
     #     print(var)
         
-    for con in model.get_all_cons():
-        print(con)
+    # for con in model.get_all_cons():
+    #     print(con)
 
     # temp = create_cell_variables(4)
 
@@ -235,3 +276,11 @@ if __name__ == "__main__":
     # b = create_cage_variables(sample_grid[1])
     # for t in b:
     #     print(t.domain())
+    
+    # binary_tuples = get_nary_satisfying_tuples(4)
+    
+    # for tuple in binary_tuples:
+    #     print(tuple)
+        
+    # print(len(binary_tuples))
+        
