@@ -84,11 +84,51 @@ An example of a 3x3 puzzle would be defined as:
 '''
 
 from cspbase import *
-import os
 
 def binary_ne_grid(cagey_grid):
-    ##IMPLEMENT
-    return 0
+    
+    n, cages = cagey_grid
+    
+    name = "nary_ad_{}".format(n)
+    cells = create_cell_variables(n)
+    
+    vars = []
+    for row in cells:
+        vars += row
+    
+        
+    csp_model = CSP(name, vars)
+    
+    # Add the constraints
+
+    binary_satisfying_tuples = []
+    for i in range(1, n+1):
+        for j in range(1, n+1):
+            if i != j:
+                binary_satisfying_tuples.append((i, j))
+
+    # print(binary_satisfying_tuples)
+    
+    for i in range(n):
+        for j in range(n):
+            # This portion is run on every cell on the grid
+            # Set constraint for each element on the same col
+            for ii in range(i+1, n):
+                name = "not-eq[cell[{},{}], cell[{},{}]]".format(i+1, j+1, ii+1, j+1)
+                con = Constraint(name, [cells[i][j], cells[ii][j]])
+                con.add_satisfying_tuples(binary_satisfying_tuples)
+                csp_model.add_constraint(con)
+            # Set constraint for each element on the same row
+            for jj in range(j+1, n):
+                name = "not-eq[cell[{},{}], cell[{},{}]]".format(i+1, j+1, i+1, jj+1)
+                con = Constraint(name, [cells[i][j], cells[i][jj]])
+                con.add_satisfying_tuples(binary_satisfying_tuples)
+                csp_model.add_constraint(con)
+            
+    return (csp_model, vars)
+
+    
+    
 
 def nary_ad_grid(cagey_grid):
     
@@ -101,18 +141,37 @@ def nary_ad_grid(cagey_grid):
     vars = []
     for row in cells:
         vars += row
-        
+    vars += cage_vars
+    
+    csp_model = CSP(name, vars)
+    
+    # Add the constraints
+    
+    return csp_model
+
+def cagey_csp_model(cagey_grid):
+    
+    n, cages = cagey_grid
+    
+    name = "nary_ad_{}".format(n)
+    cells = create_cell_variables(n)
+    cage_vars = create_cage_variables(cages)
+    
+    vars = []
+    for row in cells:
+        vars += row
     vars += cage_vars
     
     # for v in vars:
     #     print(type(v))
     
     csp_model = CSP(name, vars)
+    
+    # Add the constraints
+    
     return csp_model
 
-def cagey_csp_model(cagey_grid):
-    ##IMPLEMENT
-    pass
+
     
 
 # Return nXn matrix of cell Variables with the proper domain and name
@@ -156,22 +215,22 @@ if __name__ == "__main__":
     # print(sample_grid)
     
 
-    # model = binary_ne_grid(sample_grid)
-    model = nary_ad_grid(sample_grid)
+    model = binary_ne_grid(sample_grid)
+    # model = nary_ad_grid(sample_grid)
     # model = cagey_csp_model(sample_grid)
     
     
-    for var in model.get_all_vars():
-        print(var)
+    # for var in model.get_all_vars():
+    #     print(var)
         
-    # for con in model.get_all_cons():
-    #     print(con)
+    for con in model.get_all_cons():
+        print(con)
 
-    # temp = create_cell_variables(3)
+    # temp = create_cell_variables(4)
 
     # for i in temp:
     #     for j in i:
-    #         print(j.domain())
+    #         print(j)
     
     # b = create_cage_variables(sample_grid[1])
     # for t in b:
