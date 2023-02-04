@@ -92,43 +92,43 @@ def prop_FC(csp, newVar=None):
        only one uninstantiated variable. Remember to keep
        track of all pruned variable,value pairs and return '''
       
-      #If the newVar is true
-      if newVar:
-         #constraints is set to the list of constraints that include newVar in their scope.
-         constraints = csp.get_cons_with_var(newVar)
-      else:
-         #constraints is set to the list of all constraints in the csp.
-         constraints = csp.get_all_cons()
-      
-      #cs is set to the list of constraints if the given constraint c's number of unassignedvariables is one.
-      cs = [c for c in constraints if c.get_n_unasgn() == 1]
-      
-      #pruned is an empty list.
-      pruned = []
-      
-      #for c in cs.
-      for c in cs:
-            #v is set to the given constraint c's unassigned variables at index zero.
-            v = c.get_unasgn_vars()[0]
-      
-      #for d in the current unassigned variable's current domain of values.
-      for d in v.cur_domain():
-         
-            #If c does not have support in the unassigned variable v in the current domain value d.
-            #and the pair of variable and domain value are not in the pruned list.
-            if (not c.has_support(v, d)) and ((v, d) not in pruned):
-               
-                #Then the domain value d is pruned (removed) from the current domain.
-                v.prune_value(d)
-               
-                #The empty list pruned then appends the pair unassigned vairable and domain value.
-                pruned.append((v, d))
-
-        #if the unassigned variables current domain size is zero.
-        if v.cur_domain_size() == 0:
+    #If the newVar is true
+    if newVar:
+        #constraints is set to the list of constraints that include newVar in their scope.
+        constraints = csp.get_cons_with_var(newVar)
+    else:
+        #constraints is set to the list of all constraints in the csp.
+        constraints = csp.get_all_cons()
+    
+    #cs is set to the list of constraints if the given constraint c's number of unassignedvariables is one.
+    cs = [c for c in constraints if c.get_n_unasgn() == 1]
+    
+    #pruned is an empty list.
+    pruned = []
+    
+    #for c in cs.
+    for c in cs:
+        #v is set to the given constraint c's unassigned variables at index zero.
+        v = c.get_unasgn_vars()[0]
+    
+    #for d in the current unassigned variable's current domain of values.
+    for d in v.cur_domain():
+        
+        #If c does not have support in the unassigned variable v in the current domain value d.
+        #and the pair of variable and domain value are not in the pruned list.
+        if (not c.has_support(v, d)) and ((v, d) not in pruned):
             
-            #Then return false and pruned the list of unassigned variables and removed domain values pairs
-            return False, pruned
+            #Then the domain value d is pruned (removed) from the current domain.
+            v.prune_value(d)
+            
+            #The empty list pruned then appends the pair unassigned vairable and domain value.
+            pruned.append((v, d))
+
+    #if the unassigned variables current domain size is zero.
+    if v.cur_domain_size() == 0:
+        
+        #Then return false and pruned the list of unassigned variables and removed domain values pairs
+        return False, pruned
 
     #return True and pruned the list of unassigned variables and removed domain values pairs
     return True, pruned

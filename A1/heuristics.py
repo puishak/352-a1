@@ -30,14 +30,14 @@ var_ordering == a function with the following template
 def ord_dh(csp):
    ''' return variables according to the Degree Heuristic '''
 
-    #The maximum degree.
-    maxDegree = -1
+   #The maximum degree.
+   maxDegree = -1
+
+   #Create an empty variabe.
+   variable = None
    
-    #Create an empty variabe.
-    variable = None
-    
-    #For i in the list of unassigned variables in the CSP.
-    for i in csp.get_all_unasgn_vars():
+   #For i in the list of unassigned variables in the CSP.
+   for i in csp.get_all_unasgn_vars():
       
       #Set the current degree to one.
       currentDegree = 0
@@ -65,8 +65,8 @@ def ord_dh(csp):
                #Increase the current degree.
                currentDegree += 1
        
-       #if the current degree is greater than the max degree of -1. 
-       if cuurentDegree > maxDegree:
+      #if the current degree is greater than the max degree of -1. 
+      if currentDegree > maxDegree:
          
          #Then max degree is the current degree.
          maxDegree = currentDegree
@@ -74,22 +74,22 @@ def ord_dh(csp):
          #And the variable is set to i.
          variable = i
      
-     #return the variable.
-     return variable
+   #return the variable.
+   return variable
       
    
    
 
 def ord_mrv(csp):
-    ''' return variable according to the Minimum Remaining Values heuristic '''
-    #The minimum remaining value is set to infinity. Has to be a large value to start.
-    minimumRemainingValue = float('inf')
-      
-    #Create an empty variable.
-    variable = None
+   ''' return variable according to the Minimum Remaining Values heuristic '''
+   #The minimum remaining value is set to infinity. Has to be a large value to start.
+   minimumRemainingValue = float('inf')
+   
+   #Create an empty variable.
+   variable = None
     
-    #For i in the list of all unassigned variables in the CSP.
-    for i in csp.get_all_asgn_vars():
+   #For i in the list of all unassigned variables in the CSP.
+   for i in csp.get_all_asgn_vars():
     
       #the remaining value is set to the current domain size (the size of the variables domain) of the
       #unassigned variable i.
@@ -104,5 +104,5 @@ def ord_mrv(csp):
          #The empty variable is set to the unassigned variable i.
          variable = i
      
-     #return the variable
-     return variable
+   #return the variable
+   return variable
