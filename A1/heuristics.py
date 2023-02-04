@@ -29,21 +29,24 @@ var_ordering == a function with the following template
 
 def ord_dh(csp):
    ''' return variables according to the Degree Heuristic '''
-    # IMPLEMENT
+
+    #The maximum degree.
     maxDegree = -1
+   
+    #Create an empty variabe.
     variable = None
     
-    #For i in the number of assigned variables in the constraints scope.
-    for i in csp.get_n_unasgn():
+    #For i in the list of unassigned variables in the CSP.
+    for i in csp.get_all_unasgn_vars():
       
       #Set the current degree to one.
       currentDegree = 0
       
-      #For k in the list of constraints that include i in their scope. Where i is a number that corresponds
-      #to an unassigned variable in the constraints scope.
+      #For k in the list of constraints that include i in their scope. Where i is a variable in the list
+      #of unassigned variables in the CSP.
       for k in csp.get_cons_with_var(i):
          
-         #assignedVariables is equal to the list of unassigned variables in the csp k.
+         #assignedVariables is equal to the list of unassigned variables in the constraint k.
          unassignedVariables = k.get_all_unasgn_vars()
          
          #vistedVars is equal to an empty list that will hold the visited variables.
@@ -79,5 +82,32 @@ def ord_dh(csp):
 
 def ord_mrv(csp):
     ''' return variable according to the Minimum Remaining Values heuristic '''
-    # IMPLEMENT
-    pass
+    #The minimum remaining value is set to infinity. Has to be a large value to start.
+    minimumRemainingValue = float('inf')
+      
+    #Create an empty variable.
+    variable = None
+    
+    #For i in the list of all unassigned variables in the CSP.
+    for i in csp.get_all_asgn_vars():
+    
+      #the remaining value is set to the current domain size (the size of the variables domain) of the
+      #unassigned variable i.
+      remainingValue = i.cur_domain_size()
+    
+      #If the remaining value is less than the minimum remaining value
+      if remainingValue < minimumRemainingValue:
+         
+         #Then the minimum remaining value is set to the remaining value.
+         minimumRemainingValue = remainingValue
+         
+         #The empty variable is set to the unassigned variable i.
+         variable = i
+     
+     #return the variable
+     return variable
+         
+         
+      
+   
+    for i in csp.
