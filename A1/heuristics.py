@@ -106,8 +106,3 @@ def ord_mrv(csp):
      
      #return the variable
      return variable
-         
-         
-      
-   
-    for i in csp.
