@@ -1,12 +1,13 @@
 # =============================
-# Student Names:
-# Group ID:
-# Date:
+# Student Names: Absar, Shakib and Bigcanoe, Tanner
+# Group ID: Group 29
+# Date: 2023-02-05
 # =============================
 # CISC 352 - W23
-# cagey_csp.py
-# desc:
-#
+# propagators.py
+# desc: Create csp model from the given cagey grid description. First 2 functions only implements the csp model 
+# using binary not equal cell constraints, and nary all different cell constraints respectively. The third function
+# uses the second function to output a a complete model of the cagey grid with appropriate cage constraints.
 
 #Look for #IMPLEMENT tags in this file.
 '''
@@ -456,6 +457,7 @@ if __name__ == "__main__":
     # Sample grid to test our code
     sample_grid = (3, [(3,[(1,1), (2,1)],"+"),(1, [(1,2)], '?'), (8, [(1,3), (2,3), (2,2)], "+"), (3, [(3,1)], '?'), (3, [(3,2), (3,3)], "+")])
     # print(sample_grid)
+    
 
     # model = binary_ne_grid(sample_grid)
     # model = nary_ad_grid(sample_grid)
