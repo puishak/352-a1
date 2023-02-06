@@ -92,9 +92,6 @@ def prop_FC(csp, newVar=None):
     '''Do forward checking. That is check constraints with
        only one uninstantiated variable. Remember to keep
        track of all pruned variable,value pairs and return '''
-    '''Do forward checking. That is check constraints with
-       only one uninstantiated variable. Remember to keep
-       track of all pruned variable,value pairs and return '''
       
     #If the newVar is true
     if (newVar):
