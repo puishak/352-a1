@@ -1,12 +1,12 @@
 # =============================
-# Student Names:
-# Group ID:
-# Date:
+# Student Names: Absar, Shakib and Bigcanoe, Tanner
+# Group ID: Group 29
+# Date: 2023-02-05
 # =============================
 # CISC 352 - W23
 # propagators.py
-# desc:
-#
+# desc: An implementation of the propogator functions for the cagey csp. The functions implemented are...
+# the forward checking propogator, as well as the generalized arc consistency propogator.
 
 
 #Look for #IMPLEMENT tags in this file. These tags indicate what has
