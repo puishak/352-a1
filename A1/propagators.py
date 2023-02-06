@@ -100,32 +100,32 @@ def prop_FC(csp, newVar=None):
         #constraints is set to the list of all constraints in the csp.
         constraints = csp.get_all_cons()
     
-    #cs is set to the list of constraints if the given constraint c's number of unassignedvariables is one.
-    cs = [c for c in constraints if c.get_n_unasgn() == 1]
+    #constraint satisfaction is set to the list of constraints if the given constraints number of unassigned variables is one.
+    constraintSatisfaction = [constraint for constraint in constraints if c.get_n_unasgn() == 1]
     
     #pruned is an empty list.
     pruned = []
     
-    #for c in cs.
-    for c in cs:
-        #v is set to the given constraint c's unassigned variables at index zero.
-        v = c.get_unasgn_vars()[0]
+    #for constraint in constraint satisfaction.
+    for constraint in constraintSatisfaction:
+        #variable is set to the given constraints unassigned variables at index zero.
+        variable = c.get_unasgn_vars()[0]
     
-    #for d in the current unassigned variable's current domain of values.
-    for d in v.cur_domain():
+    #for domain value in the current unassigned variable's current domain of values.
+    for domainValue in variable.cur_domain():
         
-        #If c does not have support in the unassigned variable v in the current domain value d.
+        #If constraint does not have support in the unassigned variable in the current domain value.
         #and the pair of variable and domain value are not in the pruned list.
-        if (not c.has_support(v, d)) and ((v, d) not in pruned):
+        if (not constraint.has_support(variable, domainValue)) and ((variable, domainValue) not in pruned):
             
-            #Then the domain value d is pruned (removed) from the current domain.
-            v.prune_value(d)
+            #Then the domain value is pruned (removed) from the current domain.
+            variable.prune_value(domainValue)
             
             #The empty list pruned then appends the pair unassigned vairable and domain value.
-            pruned.append((v, d))
+            pruned.append((variable, domainValue))
 
     #if the unassigned variables current domain size is zero.
-    if v.cur_domain_size() == 0:
+    if variable.cur_domain_size() == 0:
         
         #Then return false and pruned the list of unassigned variables and removed domain values pairs
         return False, pruned
