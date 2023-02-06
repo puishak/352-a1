@@ -1,12 +1,13 @@
 # =============================
-# Student Names:
-# Group ID:
-# Date:
+# Student Names: Absar, Shakib and Bigcanoe, Tanner
+# Group ID: Group 29
+# Date: 2023-02-05
 # =============================
 # CISC 352 - W23
 # cagey_csp.py
-# desc:
-#
+# desc: An implementation of the CSP models. Specifically three functions. The binary not equal grid...
+# The nary all different grid, and the cagey csp models. There are also some helper functions for the
+# implementation.
 
 #Look for #IMPLEMENT tags in this file.
 '''
