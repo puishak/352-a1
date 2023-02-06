@@ -46,7 +46,7 @@ def ord_dh(csp):
       #of unassigned variables in the CSP.
       for k in csp.get_cons_with_var(i):
          
-         #assignedVariables is equal to the list of unassigned variables in the constraint k.
+         #assignedVariables is equal to the list of unassigned variables in constraint's scope..
          unassignedVariables = k.get_unasgn_vars()
          
          #vistedVars is equal to an empty list that will hold the visited variables.
