@@ -1,12 +1,12 @@
 # =============================
-# Student Names:
-# Group ID:
-# Date:
+# Student Names: Absar, Shakib and Bigcanoe, Tanner
+# Group ID: Group 29
+# Date: 2023-02-05
 # =============================
 # CISC 352 - W23
 # heuristics.py
-# desc:
-#
+# desc: An implementation of the huerisitic functions for the cagey csp. The functions implemented are...
+# The order degree heuristic as well as the order minimum remaining value heuristic.
 
 
 #Look for #IMPLEMENT tags in this file. These tags indicate what has
