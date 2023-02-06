@@ -89,7 +89,7 @@ def ord_mrv(csp):
    variable = None
     
    #For i in the list of all unassigned variables in the CSP.
-   for i in csp.get_all_asgn_vars():
+   for i in csp.get_all_unasgn_vars():
     
       #the remaining value is set to the current domain size (the size of the variables domain) of the
       #unassigned variable i.
