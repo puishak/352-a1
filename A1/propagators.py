@@ -101,7 +101,7 @@ def prop_FC(csp, newVar=None):
         constraints = csp.get_all_cons()
     
     #constraint satisfaction is set to the list of constraints if the given constraints number of unassigned variables is one.
-    constraintSatisfaction = [constraint for constraint in constraints if c.get_n_unasgn() == 1]
+    constraintSatisfaction = [constraint for constraint in constraints if constraint.get_n_unasgn() == 1]
     
     #pruned is an empty list.
     pruned = []
