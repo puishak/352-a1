@@ -139,5 +139,71 @@ def prop_GAC(csp, newVar=None):
     '''Do GAC propagation. If newVar is None we do initial GAC enforce
        processing all constraints. Otherwise we do GAC enforce with
        constraints containing newVar on GAC Queue'''
-    #IMPLEMENT
-    pass
+    
+    #If newVar is true
+    if (newVar):
+        #Then constraints is set to the csp's list of constraints that include newVar in their scope
+        constraints = csp.get_cons_with_var(newVar)
+    else:
+        #otherwise the constraints are set to all of the constraints of the csp.
+        constraints = csp.get_all_cons()
+
+    #The generalized arc consistency queue data structure is initialized to hold the constraints
+    #that need to be looked at again incase of violation.
+    generalizedArcConsistencyQueue = []
+
+    #For constraint in constraints
+    for constraint in constraints:
+
+        #Add the constraint to the queue.
+        generalizedArcConsistencyQueue.append(constraint)
+
+    #Create an empty array called pruned to hold the removed values from the domain.
+    pruned = []
+
+    #While the length of the queue is true.
+    while len(generalizedArcConsistencyQueue):
+
+        #constraint is set to the popped value of the queue.
+        constraint = generalizedArcConsistencyQueue.pop(0)
+
+        #For variable in the constraints scope.
+        for variable in constraint.get_scope():
+            #if the domain value is in the variables current domain.
+            for domainValue in variable.cur_domain():
+
+                #then if the constraint does not has a supporting tuple (a set of 
+                #assignments satisfying the constraint where each value is still in the 
+                #corresponding variables current domain.
+                #And the pair is not currently in the pruned array.
+                if (not constraint.has_support(variable, domainValue)) and ((variable, domainValue) not in pruned):
+
+                    #then prune the domain value of the variable
+                    variable.prune_value(domainValue)
+
+                    #add the pair of variable and domain value to the pruned array
+                    pruned.append((variable, domainValue))
+
+                    #if the variables current domain size is zero
+                    if variable.cur_domain_size() == 0:
+
+                        #then we can clear the queue
+                        generalizedArcConsistencyQueue.clear()
+
+                        #and return False as well as the array of pruned pairs
+                        return False, pruned
+                    
+                    #otherwise
+                    else:
+
+                        #for a C-Prime in the list of constraints that include variable in their scope
+                        for cPrime in csp.get_cons_with_var(variable):
+
+                            #if the C-Prime is not in the queue
+                            if cPrime not in generalizedArcConsistencyQueue:
+
+                                #then add the C-Prime value to the queue.
+                                generalizedArcConsistencyQueue.append(cPrime)
+    
+    #return true as well as the array of pruned pairs
+    return True, pruned
